@@ -16,6 +16,8 @@ const services = [
     description:
       "Warm, elegant and functional interiors designed around your lifestyle.",
     icon: Home,
+    image:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=90",
   },
   {
     number: "02",
@@ -23,6 +25,8 @@ const services = [
     description:
       "Smart space planning and premium finishes that make every corner count.",
     icon: Building2,
+    image:
+      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1400&q=90",
   },
   {
     number: "03",
@@ -30,6 +34,8 @@ const services = [
     description:
       "Sophisticated interiors for spacious homes with a strong personal identity.",
     icon: Sofa,
+    image:
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=90",
   },
   {
     number: "04",
@@ -37,105 +43,121 @@ const services = [
     description:
       "Professional workspaces designed for productivity, comfort and brand image.",
     icon: Store,
+    image:
+      "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=90",
   },
 ];
 
 export default function Services() {
   return (
-    <section
-      id="services"
-      className="relative bg-[#080808] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-32"
-    >
-      <div className="mx-auto max-w-[1400px]">
-
-        {/* HEADER */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mb-12 flex flex-col justify-between gap-7 sm:mb-16 md:flex-row md:items-end"
-        >
-          <div>
-            <p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-[#c7a15a] sm:text-xs">
-              What We Do
-            </p>
-
-            <h2 className="max-w-3xl text-4xl leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              Interior solutions
-              <span className="block italic text-[#c7a15a]">
-                made for you.
-              </span>
-            </h2>
-          </div>
-
-          <p className="max-w-md text-sm leading-6 text-white/45 sm:leading-7">
-            From concept to completion, we create beautiful spaces with
-            thoughtful planning, premium materials and detailed execution.
+    <div>
+      {/* HEADER */}
+      <motion.div
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+        className="mb-12 flex flex-col justify-between gap-7 md:mb-16 md:flex-row md:items-end"
+      >
+        <div>
+          <p className="mb-4 text-xs uppercase tracking-[0.3em] text-[#c7a15a]">
+            What We Do
           </p>
-        </motion.div>
 
-        {/* SERVICES */}
-        <div className="grid overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/10 md:grid-cols-2 md:rounded-[2rem]">
-          {services.map((service, index) => {
-            const Icon = service.icon;
+          <h2 className="max-w-3xl text-4xl leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Interior solutions
+            <span className="block italic text-[#c7a15a]">
+              made for you.
+            </span>
+          </h2>
+        </div>
 
-            return (
-              <motion.article
-                key={service.number}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.08,
-                  duration: 0.6,
-                }}
-                className="group relative min-h-[340px] bg-[#101010] p-6 transition-all duration-500 hover:bg-[#17140f] sm:min-h-[360px] sm:p-8 md:p-10"
-              >
-                {/* TOP */}
-                <div className="flex items-start justify-between">
+        <p className="max-w-md text-sm leading-7 text-white/45">
+          From concept to completion, we create beautiful spaces with
+          thoughtful planning, premium materials and detailed execution.
+        </p>
+      </motion.div>
+
+      {/* SERVICE CARDS */}
+      <div className="grid gap-5 md:grid-cols-2">
+        {services.map((service, index) => {
+          const Icon = service.icon;
+
+          return (
+            <motion.article
+              key={service.number}
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.7,
+              }}
+              className="group relative min-h-[460px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#111]"
+            >
+              {/* IMAGE */}
+              <img
+                src={service.image}
+                alt={`${service.title} by Ravi & Co. Interiors`}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
+              />
+
+              {/* DARK OVERLAY */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/90 transition-all duration-500 group-hover:from-black/25 group-hover:via-black/20 group-hover:to-black/90" />
+
+              {/* GOLD GLOW */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#c7a15a]/10 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+
+              {/* TOP */}
+              <div className="absolute left-7 right-7 top-7 flex items-start justify-between sm:left-8 sm:right-8 sm:top-8">
+                <div className="flex items-center gap-3">
                   <span className="text-xs tracking-[0.2em] text-[#c7a15a]">
                     {service.number}
                   </span>
 
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/60 transition-all duration-500 group-hover:border-[#c7a15a]/50 group-hover:text-[#c7a15a] sm:h-12 sm:w-12">
-                    <Icon size={21} strokeWidth={1.5} />
-                  </div>
+                  <span className="h-px w-8 bg-[#c7a15a]/60" />
                 </div>
 
-                {/* CONTENT */}
-                <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 md:bottom-10 md:left-10 md:right-10">
-                  <h3 className="text-2xl tracking-[-0.02em] text-white sm:text-3xl">
-                    {service.title}
-                  </h3>
-
-                  <p className="mt-3 max-w-md text-sm leading-6 text-white/45 sm:mt-4">
-                    {service.description}
-                  </p>
-
-                  <div className="mt-5 flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-[#c7a15a] sm:mt-6 sm:text-xs">
-                    Explore Service
-
-                    <ArrowUpRight
-                      size={15}
-                      className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                    />
-                  </div>
+                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 group-hover:border-[#c7a15a]/60 group-hover:text-[#c7a15a]">
+                  <Icon size={20} strokeWidth={1.5} />
                 </div>
+              </div>
 
-                {/* HOVER LINE */}
-                <div className="absolute bottom-0 left-0 h-px w-0 bg-[#c7a15a] transition-all duration-500 group-hover:w-full" />
-              </motion.article>
-            );
-          })}
-        </div>
+              {/* CONTENT */}
+              <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-8">
+                <p className="mb-3 text-[10px] uppercase tracking-[0.25em] text-white/60">
+                  Interior Design
+                </p>
 
-        {/* BOTTOM NOTE */}
-        <div className="mt-8 flex items-center gap-3 text-[9px] uppercase tracking-[0.22em] text-white/30 sm:mt-10">
-          <span className="h-px w-8 bg-[#c7a15a]/50" />
-          <span>Concept • Design • Execution</span>
-        </div>
+                <h3 className="text-3xl tracking-[-0.03em] text-white sm:text-4xl">
+                  {service.title}
+                </h3>
+
+                <p className="mt-3 max-w-md text-sm leading-6 text-white/65">
+                  {service.description}
+                </p>
+
+                <div className="mt-6 flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#c7a15a]">
+                  Explore Service
+                  <ArrowUpRight
+                    size={16}
+                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
+                </div>
+              </div>
+
+              {/* BOTTOM GOLD LINE */}
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#c7a15a] transition-all duration-700 group-hover:w-full" />
+            </motion.article>
+          );
+        })}
       </div>
-    </section>
+
+      {/* BOTTOM NOTE */}
+      <div className="mt-8 flex items-center gap-3 text-[9px] uppercase tracking-[0.22em] text-white/30 sm:mt-10">
+        <span className="h-px w-8 bg-[#c7a15a]/50" />
+        <span>Concept • Design • Execution</span>
+      </div>
+    </div>
   );
 }
