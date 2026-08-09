@@ -12,24 +12,24 @@ const points = [
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="relative overflow-hidden bg-[#0d0d0d] px-6 py-24 md:px-10 lg:px-16 lg:py-32"
-    >
+    <section id="about" className="bg-[#090909] px-5 py-24 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-[1400px]">
-        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
 
+        {/* MAIN ABOUT */}
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-20">
+
+          {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="mb-5 text-xs uppercase tracking-[0.3em] text-[#c7a15a]">
+            <p className="mb-4 text-[10px] uppercase tracking-[0.3em] text-[#c7a15a] sm:text-xs">
               About Ravi & Co.
             </p>
 
-            <h2 className="text-4xl leading-tight tracking-tight text-white md:text-6xl">
+            <h2 className="text-4xl leading-[1.05] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
               Spaces that feel
               <span className="block italic text-[#c7a15a]">
                 uniquely yours.
@@ -50,13 +50,14 @@ export default function About() {
 
             <a
               href="#contact"
-              className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#c7a15a]/50 px-6 py-3 text-xs uppercase tracking-[0.18em] text-[#c7a15a] transition-all hover:bg-[#c7a15a] hover:text-black"
+              className="mt-8 inline-flex items-center gap-3 rounded-full border border-[#c7a15a]/50 px-6 py-3 text-xs uppercase tracking-[0.18em] text-[#c7a15a] transition-all duration-300 hover:bg-[#c7a15a] hover:text-black"
             >
               Work With Us
               <ArrowUpRight size={16} />
             </a>
           </motion.div>
 
+          {/* RIGHT INTERIOR IMAGE */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -64,32 +65,44 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative min-h-[460px] overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#252019] via-[#151515] to-[#090909]">
+            <div className="group relative min-h-[460px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#151515] sm:min-h-[540px]">
 
-              <div className="absolute left-8 top-8 text-[9px] uppercase tracking-[0.35em] text-[#c7a15a]">
-                Our Philosophy
-              </div>
+              <img
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=90"
+                alt="Luxury interior design"
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
 
-              <div className="absolute bottom-0 left-[12%] h-[65%] w-[76%] rounded-t-[3rem] border border-white/10 bg-gradient-to-t from-black/80 to-white/[0.04]" />
+              {/* DARK OVERLAY */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
-              <div className="absolute bottom-[12%] left-[22%] h-[28%] w-[56%] rounded-t-3xl border border-[#c7a15a]/20 bg-[#18140e]" />
-
-              <div className="absolute bottom-[40%] right-[18%] h-[30%] w-[14%] rounded-t-full border border-white/10 bg-white/[0.03]" />
-
-              <div className="absolute bottom-8 left-8 right-8 border-t border-white/10 pt-5">
-                <p className="text-2xl text-white/80">
-                  Design. Detail. Craft.
-                </p>
-
-                <p className="mt-1 text-xs text-white/35">
-                  Built around your lifestyle.
+              {/* TOP LABEL */}
+              <div className="absolute left-7 top-7">
+                <p className="text-[9px] uppercase tracking-[0.35em] text-[#c7a15a]">
+                  Our Philosophy
                 </p>
               </div>
+
+              {/* BOTTOM TEXT */}
+              <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-8">
+                <div className="border-t border-white/20 pt-5">
+                  <p className="text-2xl text-white sm:text-3xl">
+                    Design. Detail. Craft.
+                  </p>
+
+                  <p className="mt-2 text-xs text-white/60">
+                    Built around your lifestyle.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </motion.div>
+
         </div>
 
-        <div className="mt-20 grid gap-4 border-t border-white/10 pt-10 sm:grid-cols-2 lg:grid-cols-4">
+        {/* FEATURES */}
+        <div className="mt-16 grid gap-6 border-t border-white/10 pt-10 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
           {points.map((point, index) => (
             <motion.div
               key={point}
@@ -109,6 +122,7 @@ export default function About() {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

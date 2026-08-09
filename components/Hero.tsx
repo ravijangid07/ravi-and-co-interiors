@@ -5,34 +5,31 @@ import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen overflow-hidden bg-[#090909] px-6 pt-28 md:px-10 lg:px-16"
-    >
-      <div className="pointer-events-none absolute -right-40 top-20 h-[500px] w-[500px] rounded-full bg-[#c7a15a]/10 blur-[140px]" />
+    <section className="relative overflow-hidden">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] max-w-[1400px] items-center px-5 py-16 sm:px-8 lg:min-h-[calc(100vh-7rem)] lg:px-10 lg:py-20">
+        <div className="grid w-full items-center gap-14 lg:grid-cols-[1.05fr_.95fr] lg:gap-12">
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-7rem)] max-w-[1400px] items-center">
-        <div className="grid w-full items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
-
+          {/* LEFT CONTENT */}
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-7 flex items-center gap-3"
+              transition={{ duration: 0.7 }}
+              className="mb-6 flex items-center gap-3"
             >
-              <span className="h-px w-10 bg-[#c7a15a]" />
+              <span className="h-px w-8 bg-[#c7a15a] sm:w-10" />
 
-              <span className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#c7a15a]">
+              <span className="flex items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-[#c7a15a] sm:text-xs sm:tracking-[0.3em]">
                 <Sparkles size={13} />
                 Luxury Interior Design
               </span>
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 45 }}
+              initial={{ opacity: 0, y: 35 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="text-[clamp(3.5rem,8vw,7.8rem)] leading-[0.84] tracking-[-0.045em] text-white"
+              transition={{ duration: 0.9 }}
+              className="max-w-[900px] text-[clamp(2.8rem,12vw,7.8rem)] leading-[0.88] tracking-[-0.045em] text-white sm:text-[clamp(3.5rem,8vw,7.8rem)]"
             >
               Where Vision
               <br />
@@ -42,43 +39,66 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mt-8 max-w-xl text-sm leading-7 text-white/55 md:text-base"
+              transition={{ delay: 0.25, duration: 0.7 }}
+              className="mt-7 max-w-xl text-sm leading-6 text-white/55 sm:mt-8 sm:text-base sm:leading-7"
             >
               Bespoke interiors and custom furniture crafted for modern homes,
               villas, apartments and workspaces — where timeless design meets
               exceptional craftsmanship.
             </motion.p>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+            {/* BUTTONS */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
+              className="mt-8 flex w-full flex-col gap-3 sm:mt-9 sm:flex-row sm:gap-4"
+            >
               <a
                 href="#contact"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#c7a15a] px-7 py-4 text-sm font-semibold text-black"
+                className="group inline-flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full bg-[#c7a15a] px-6 py-4 text-sm font-semibold text-black transition-transform duration-300 hover:scale-[1.02] sm:w-auto sm:px-7"
               >
                 Book a Consultation
-                <ArrowUpRight size={18} />
+                <ArrowUpRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
               </a>
 
               <a
                 href="#portfolio"
-                className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/15 px-7 py-4 text-sm text-white"
+                className="group inline-flex min-h-[52px] w-full items-center justify-center gap-3 rounded-full border border-white/15 px-6 py-4 text-sm text-white transition-all duration-300 hover:border-[#c7a15a]/50 hover:text-[#c7a15a] sm:w-auto sm:px-7"
               >
                 Explore Our Work
-                <ArrowUpRight size={17} />
+                <ArrowUpRight
+                  size={17}
+                  className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                />
               </a>
-            </div>
+            </motion.div>
 
-            <div className="mt-12 flex flex-wrap items-center gap-5 text-[10px] uppercase tracking-[0.22em] text-white/35">
+            {/* DETAILS */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-3 text-[9px] uppercase tracking-[0.18em] text-white/35 sm:mt-12 sm:gap-5 sm:text-[10px] sm:tracking-[0.22em]"
+            >
               <span>10+ Years Experience</span>
+
               <span className="h-1 w-1 rounded-full bg-[#c7a15a]" />
+
               <span>Pune</span>
+
               <span className="h-1 w-1 rounded-full bg-[#c7a15a]" />
+
               <span>Home • Villa • Flat • Workspace</span>
-            </div>
+            </motion.div>
           </div>
 
+          {/* DESKTOP VISUAL */}
           <motion.div
             initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -112,11 +132,12 @@ export default function Hero() {
           </motion.div>
         </div>
 
+        {/* SCROLL INDICATOR */}
         <motion.a
           href="#about"
           animate={{ y: [0, 7, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-white/30 md:flex"
+          className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-white/30 md:flex"
         >
           <span className="text-[9px] uppercase tracking-[0.35em]">
             Scroll to explore
