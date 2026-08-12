@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Ravi & Co. Interiors | Luxury Interior Design in Mumbai & Pune",
+
   description:
     "Ravi & Co. Interiors creates luxury interior designs and custom furniture for homes, flats, villas, bungalows and workspaces in Mumbai and Pune.",
+
   keywords: [
     "luxury interior design Mumbai",
     "luxury interior design Pune",
@@ -29,9 +31,14 @@ export const metadata: Metadata = {
     "custom furniture",
     "Ravi & Co. Interiors",
   ],
+
   authors: [{ name: "Ravi & Co. Interiors" }],
   creator: "Ravi & Co. Interiors",
   publisher: "Ravi & Co. Interiors",
+
+  verification: {
+    google: "qljqkKF6VTlSagDXBOANZ5jC7NftrLVQTrByklv_Pj4",
+  },
 
   openGraph: {
     title: "Ravi & Co. Interiors | Luxury Interior Design",
