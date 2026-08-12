@@ -1,153 +1,128 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#090909]">
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-7rem)] max-w-[1400px] items-center px-5 py-12 sm:px-8 lg:px-12">
-        <div className="grid w-full items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
+    <section
+      id="home"
+      className="relative overflow-hidden bg-[#080808] px-5 pb-14 pt-28 sm:px-8 md:min-h-screen md:px-12 md:pb-10 md:pt-32"
+    >
+      <div className="mx-auto grid max-w-[1450px] items-center gap-12 md:grid-cols-[1.02fr_0.98fr] md:gap-10 lg:gap-16">
 
-          {/* LEFT CONTENT */}
-          <div className="max-w-3xl">
+        {/* LEFT CONTENT */}
+        <motion.div
+          initial={{ opacity: 0, x: -35 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative z-10"
+        >
+          <p className="mb-5 text-[10px] uppercase tracking-[0.3em] text-[#c7a15a] sm:text-xs">
+            Luxury Interior Design
+          </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="mb-7 flex items-center gap-3"
+          <h1 className="max-w-3xl text-[3.6rem] leading-[0.9] tracking-[-0.055em] text-white sm:text-6xl md:text-7xl lg:text-[6.4rem] xl:text-[7rem]">
+            Where Vision
+            <span className="block italic text-[#c7a15a]">
+              Becomes
+            </span>
+            <span className="block">
+              a Signature
+            </span>
+            <span className="block">
+              Space.
+            </span>
+          </h1>
+
+          <p className="mt-7 max-w-xl text-sm leading-7 text-white/50 sm:text-base">
+            Bespoke interiors and custom furniture crafted for modern homes,
+            villas, apartments and workspaces — where timeless design meets
+            exceptional craftsmanship.
+          </p>
+
+          {/* BUTTONS */}
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="#contact"
+              className="flex min-h-[54px] items-center justify-center gap-3 rounded-full bg-[#c7a15a] px-7 text-sm font-semibold text-black transition-transform hover:scale-[1.02]"
             >
-              <span className="h-px w-10 bg-[#c7a15a]" />
+              Book a Consultation
+              <ArrowUpRight size={18} />
+            </a>
 
-              <span className="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#c7a15a]">
-                <Sparkles size={13} />
-                Luxury Interior Design
-              </span>
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 45 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-              className="text-[clamp(3.5rem,8vw,7.8rem)] leading-[0.84] tracking-[-0.045em] text-white"
+            <a
+              href="#portfolio"
+              className="flex min-h-[54px] items-center justify-center gap-3 rounded-full border border-white/15 px-7 text-sm text-white transition-all hover:border-[#c7a15a]/60 hover:text-[#c7a15a]"
             >
-              Where Vision
-              <br />
-              <span className="italic text-[#c7a15a]">Becomes</span>
-              <br />
-              a Signature Space.
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="mt-8 max-w-xl text-sm leading-7 text-white/55 md:text-base"
-            >
-              Bespoke interiors and custom furniture crafted for modern homes,
-              villas, apartments and workspaces — where timeless design meets
-              exceptional craftsmanship.
-            </motion.p>
-
-            {/* BUTTONS */}
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#contact"
-                className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#c7a15a] px-7 py-4 text-sm font-semibold text-black transition-transform duration-300 hover:scale-[1.02]"
-              >
-                Book a Consultation
-                <ArrowUpRight size={18} />
-              </a>
-
-              <a
-                href="#portfolio"
-                className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/15 px-7 py-4 text-sm text-white transition-all duration-300 hover:border-[#c7a15a]/50 hover:text-[#c7a15a]"
-              >
-                Explore Our Work
-                <ArrowUpRight size={17} />
-              </a>
-            </div>
-
-            {/* DETAILS */}
-            <div className="mt-12 flex flex-wrap items-center gap-5 text-[10px] uppercase tracking-[0.22em] text-white/35">
-              <span>10+ Years Experience</span>
-
-              <span className="h-1 w-1 rounded-full bg-[#c7a15a]" />
-
-              <span>Mumbai</span>
-
-              <span className="h-1 w-1 rounded-full bg-[#c7a15a]" />
-
-              <span>Pune</span>
-
-              <span className="h-1 w-1 rounded-full bg-[#c7a15a]" />
-
-              <span>Home • Villa • Flat • Workspace</span>
-            </div>
+              Explore Our Work
+              <ArrowUpRight size={18} />
+            </a>
           </div>
 
-          {/* RIGHT HERO IMAGE */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.94 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2 }}
-            className="relative hidden min-h-[550px] lg:block"
-          >
-            <div className="group relative min-h-[550px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#151515] shadow-2xl">
+          {/* EXPERIENCE */}
+          <div className="mt-10 flex flex-wrap items-center gap-x-5 gap-y-3 text-[9px] uppercase tracking-[0.22em] text-white/35">
+            <span>10+ Years Experience</span>
+            <span className="h-1 w-1 rounded-full bg-[#c7a15a]" />
+            <span>Mumbai</span>
+            <span className="h-1 w-1 rounded-full bg-[#c7a15a]" />
+            <span>Pune</span>
+            <span className="h-1 w-1 rounded-full bg-[#c7a15a]" />
+            <span>Home • Villa • Flat • Workspace</span>
+          </div>
+        </motion.div>
 
-              <img
-                src="/images/hero-interior.png"
-                alt="Luxury bright living room interior designed by Ravi & Co. Interiors"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-
-              {/* IMAGE OVERLAY */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />
-
-              {/* TOP LABEL */}
-              <div className="absolute left-7 top-7">
-                <p className="text-[9px] uppercase tracking-[0.35em] text-white/80">
-                  Ravi &amp; Co. Interiors
-                </p>
-              </div>
-
-              {/* BOTTOM TEXT */}
-              <div className="absolute bottom-7 left-7 right-7">
-                <div className="border-t border-white/20 pt-5">
-
-                  <p className="text-[9px] uppercase tracking-[0.35em] text-[#c7a15a]">
-                    Signature Collection
-                  </p>
-
-                  <p className="mt-2 text-2xl text-white sm:text-3xl">
-                    Designed for Living
-                  </p>
-
-                  <p className="mt-1 text-xs text-white/60">
-                    Luxury interiors • Mumbai • Pune
-                  </p>
-
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* SCROLL */}
-        <motion.a
-          href="#about"
-          animate={{ y: [0, 7, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-          className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 text-white/30 md:flex"
+        {/* RIGHT IMAGE */}
+        <motion.div
+          initial={{ opacity: 0, x: 35, scale: 0.98 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.15 }}
+          className="relative z-10"
         >
-          <span className="text-[9px] uppercase tracking-[0.35em]">
-            Scroll to explore
-          </span>
+          <div className="relative min-h-[430px] overflow-hidden rounded-[2rem] border border-white/10 bg-[#111] sm:min-h-[520px] md:min-h-[600px] lg:min-h-[680px]">
 
-          <ArrowDown size={16} />
-        </motion.a>
+            <img
+              src="/images/hero-interior.png"
+              alt="Luxury interior designed by Ravi & Co. Interiors"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+            />
+
+            {/* IMAGE OVERLAY */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+
+            {/* TOP BRAND */}
+            <div className="absolute left-6 top-6 text-[9px] uppercase tracking-[0.28em] text-white/60 sm:left-8 sm:top-8">
+              Ravi & Co. Interiors
+            </div>
+
+            {/* BOTTOM INFO */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+              <p className="text-[10px] uppercase tracking-[0.28em] text-[#c7a15a]">
+                Signature Collection
+              </p>
+
+              <h2 className="mt-2 text-3xl tracking-[-0.03em] text-white sm:text-4xl">
+                Designed for Living
+              </h2>
+
+              <p className="mt-2 text-xs text-white/50">
+                Luxury Interiors • Mumbai • Pune
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
+
+      {/* SCROLL INDICATOR */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2 }}
+        className="mx-auto mt-10 flex max-w-[1450px] items-center gap-3 text-[9px] uppercase tracking-[0.25em] text-white/25 md:absolute md:bottom-7 md:left-12 md:mt-0"
+      >
+        <ArrowDown size={14} />
+        Scroll to explore
+      </motion.div>
     </section>
   );
 }
